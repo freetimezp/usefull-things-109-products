@@ -10,8 +10,12 @@ a {
     text-decoration: none;
 }
 
-html, body {
+html,
+body {
     height: 100%;
+    background: url(../images/bg.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     overflow: hidden;
 }
 
@@ -44,7 +48,7 @@ ion-icon {
 #container {
     width: 2080px;
     height: 2880px;
-    background-color: #ccc;
+    background-color: transparent;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -57,8 +61,12 @@ ion-icon {
     background-color: #f4efef;
     border: 1px solid #dadada;
     float: left;
-    margin: 0;
+    margin: 5px;
     padding: 10px;
+}
+
+.box img {
+    pointer-events: none;
 }
 
 .modal {
@@ -67,7 +75,13 @@ ion-icon {
     height: 100vh;
     top: 0;
     left: 0;
-    background: #f4efef;
+    background: #c0e4ed;
+    background: linear-gradient(
+        90deg,
+        rgba(192, 228, 237, 1) 0%,
+        rgba(247, 255, 251, 1) 48%,
+        rgba(192, 228, 237, 1) 100%
+    );
     z-index: 2;
     display: none;
 }
@@ -105,6 +119,8 @@ ion-icon {
 
 .product-img-container {
     width: 60vw;
+    max-height: 700px;
+    overflow: hidden;
 }
 
 .product-name {
@@ -140,6 +156,10 @@ ion-icon {
     color: #7a7a7a;
 }
 
+.suggestions .box {
+    box-shadow: 0px 3px 8px rgba(6, 112, 139, 0.8);
+}
+
 .suggestions .box p {
     margin: -15px 0 0 0;
 }
@@ -151,20 +171,3 @@ ion-icon {
 img {
     user-select: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

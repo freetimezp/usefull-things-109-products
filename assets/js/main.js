@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("container");
     const modal = document.querySelector(".modal");
@@ -8,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalProductName = document.querySelector(".modal .product-name h1");
     const modalProductInfo = document.querySelector(".modal .product-name p");
 
-    const boxCount = 12 * 12;
+    const boxCount = 21 * 12;
     const boxSize = 240;
-    const totalImages = 15;
+    const totalImages = 18;
     const columns = 21;
 
     const products = [
@@ -72,12 +71,24 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             info: "Lorem ipsum text here.",
-            name: "Title & 15"
-        }
+            name: "Title & 15",
+        },
+        {
+            info: "Lorem ipsum text here.",
+            name: "Title & 16",
+        },
+        {
+            info: "Lorem ipsum text here.",
+            name: "Title & 17",
+        },
+        {
+            info: "Lorem ipsum text here.",
+            name: "Title & 18",
+        },
     ];
 
     const containerWidth = columns * boxSize;
-    container.style.width = containerWidth + 'px';
+    container.style.width = containerWidth + "px";
 
     for (let i = 0; i < boxCount; i++) {
         const box = document.createElement("div");
@@ -119,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         box.addEventListener("click", function () {
             if (!isDragging && isClicking) {
-                gsap.set(modal, { display: 'flex' });
+                gsap.set(modal, { display: "flex" });
                 gsap.to(modal, { opacity: 1, duration: 0.4 });
 
                 productImg.src = img.src;
@@ -135,9 +146,9 @@ document.addEventListener("DOMContentLoaded", function () {
             duration: 0.4,
             onComplete: () => {
                 gsap.set(modal, {
-                    display: 'none'
+                    display: "none",
                 });
-            }
+            },
         });
     });
 
@@ -157,16 +168,16 @@ document.addEventListener("DOMContentLoaded", function () {
         startTranslate.x = gsap.getProperty(container, "x");
         startTranslate.y = gsap.getProperty(container, "y");
 
-        gsap.set(container, { cursor: 'grabbing' });
-        gsap.set(container, { userSelect: 'none' });
+        gsap.set(container, { cursor: "grabbing" });
+        gsap.set(container, { userSelect: "none" });
     }
 
     function onDragEnd() {
         if (!isContainerDragging) return;
         isContainerDragging = false;
 
-        gsap.set(container, { cursor: 'grab' });
-        gsap.set(container, { userSelect: 'none' });
+        gsap.set(container, { cursor: "grab" });
+        gsap.set(container, { userSelect: "none" });
     }
 
     function onDrag(e) {
@@ -183,36 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
             x: translateX,
             y: translateY,
             duration: 0.5,
-            ease: "power1.out"
+            ease: "power1.out",
         });
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
